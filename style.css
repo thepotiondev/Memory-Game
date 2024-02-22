@@ -1,0 +1,105 @@
+h1 {
+  color: #2C2F47;
+  font-size: 7em;
+  width: 100%;
+  margin:0.5em;
+}
+
+button {
+  width: 12.5%;
+  font-size: 2.5em;
+  background-color:#87A8C8;
+  border-radius: 0.25em;
+  border:none;
+}
+
+div[data-state='faceUp']{
+  background-size:cover;
+  transform: rotateY(180deg);
+  transition: transform 1s;
+}
+
+div[data-state='faceDown']{
+  background-image: url('imgs/faceDown.png');
+  background-size:cover;
+  transform:rotateY(0deg);
+  transition: transform 1s;
+}
+
+div.castle[data-state='faceUp']{
+  background-image: url('imgs/castle.png');
+}
+
+div.sword[data-state='faceUp']{
+  background-image: url('imgs/sword.png');
+}
+
+div.shield[data-state='faceUp']{
+  background-image: url('imgs/shield.png');
+
+}
+
+div.bow[data-state='faceUp']{
+  background-image: url('imgs/bow.png');
+}
+
+body{
+  background-color: rgb(118, 230, 192);
+  font-family: sans-serif;
+  text-align:center;
+  margin: 0;
+  paddling: 0;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#game {
+  display: grid;
+  width: 25%;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px; 
+}
+
+
+#game > div {
+  width: 100%;
+  border: 1px solid black;
+}
+
+#game > div:not(.timer):not(.reset)::before {
+  content: "";
+  display: block;
+  padding-top: 177.78%; 
+}
+
+#game > div.timer {
+  background-color:transparent;
+  font-weight: bold;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  border:none;
+}
+
+#score.visible {
+  color: #2C2F47;
+  font-size: 1.25em;
+  display: flex;
+  justify-content: flex-start;
+  align-items:center;
+  width: 25%;
+  padding-bottom:10px;
+}
+
+#game > div.reset {
+  background-color:orange;
+  font-size: 0.5em;
+  font-weight: bold;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  border:none;
+}
